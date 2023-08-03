@@ -5,21 +5,36 @@ interface Food {
 
 let favoriteFood: Food = {
   name: "banana",
-  calories: 1,
+  calories: 110,
 };
 
 let foodArray: Food[] = [
   {
     name: "sandwich",
-    calories: 130,
+    calories: 120,
   },
   {
     name: "hamburger",
-    calories: 120,
+    calories: 130,
+  },
+  {
+    name: "pizza",
+    calories: 140,
   },
 ];
 function layCaloCacMonAn(foodArray: Food[]): number[] {
   return foodArray.map((Food) => Food.calories);
 }
-const layCalo: number[] = layCaloCacMonAn(foodArray);
-console.log("lượng calo các món ăn:", layCalo);
+function layCaloDuoi140(foodArray: Food[]): Food[] {
+  return foodArray.filter((Food) => Food.calories < 140);
+}
+function tongLuongCalo(Food: Food[]): number {
+  return foodArray.reduce((total, food) => total + food.calories, 0);
+}
+console.log("Món ăn yêu thích:", favoriteFood);
+//const layCalo: number[] = layCaloCacMonAn(foodArray);
+//console.log("lượng calo các món ăn:", layCalo);
+console.log("Lượng calo các món ăn:", layCaloCacMonAn(foodArray));
+//const caloDuoi140: Food[] = layCaloDuoi140(foodArray);
+console.log("Calo dưới 140:", layCaloDuoi140(foodArray));
+console.log("Tổng lượng calo:", tongLuongCalo(foodArray));
