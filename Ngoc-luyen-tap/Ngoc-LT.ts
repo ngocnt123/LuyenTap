@@ -37,6 +37,25 @@ function getGenderOfEx(exArray: Ex[]): string[] {
   });
 }
 
-const getThe: string[] = getTheHeightOfEx(exArray);
-console.log("Get The Height Of Ex", getThe);
+function getNameOfEx(exArray: Ex[]): string[] {
+  return exArray.map((Ex) => Ex.name);
+}
+
+function filterExUnderOrEqualTo20YearsOld(exArray: Ex[]): Ex[] {
+  return exArray.filter((Ex) => Ex.age <= 20);
+}
+function calculateTheTotalAgeOfTheEx(Ex: Ex[]): number {
+  return exArray.reduce((total, exArray) => total + exArray.age, 0);
+}
+
+const getThe: string[] = getNameOfEx(exArray);
+console.log("Get The Name Of Ex", getThe);
 console.log("Get The Gender Of Ex", getGenderOfEx(exArray));
+console.log(
+  "Filter Ex Under Or Equal To 20 Years Old",
+  filterExUnderOrEqualTo20YearsOld(exArray)
+);
+console.log(
+  "Calculate The Total Age Of The Ex",
+  calculateTheTotalAgeOfTheEx(exArray)
+);
