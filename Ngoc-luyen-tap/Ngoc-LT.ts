@@ -32,8 +32,8 @@ function getTheHeightOfEx(exArray: Ex[]): string[] {
 
 function getGenderOfEx(exArray: Ex[]): string[] {
   return exArray.map((ex) => {
-    if (ex.gender) return "Boy";
-    else return "Girl";
+    if (ex.gender) return "Male";
+    else return "Female";
   });
 }
 
